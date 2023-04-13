@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import coldBg from './assets/cold.jpg';
 import hotBg from './assets/hot.jpg';
 import './index.css'
-
+import Description from "./components/Description.jsx";
+import { getFormattedWeatherData } from "./weatherService.js";
 
 function App() {
+
+  useEffect(()=>{
+      const fetchWeatherData = async() =>{
+        const data = await getFormattedWeatherData('pune')
+      }
+
+      fetchWeatherData();
+  },[])
   
   return (
   <div className="app" style={{backgroundImage: `url(${coldBg}})`}}>
@@ -26,7 +35,7 @@ function App() {
           </div>
         </div>
 
-        
+       <Description />
       </div>
     </div>
   </div>
