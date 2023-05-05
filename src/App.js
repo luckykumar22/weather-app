@@ -6,7 +6,7 @@ import "./index.css";
 import Description from "./components/Description.jsx";
 
 function App() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Ghaziabad");
   const [weather, setWeather] = useState(null);
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
